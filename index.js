@@ -3,9 +3,9 @@ const http = require('http');
 const socetIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
-const io = socketIo (server);
-const UserService - require('./UsersService');
-cinst UserService = new UserService();
+const io = socketIo(server);
+const UserService = require('./UsersService');
+const UserService = new UserService();
 
 app.use(express.static(__dirname + './public'));
 
