@@ -16,8 +16,8 @@ class UserService {
   }
     
   removeUser(userId) {
-    this.users = this.users.filter(user => user.id !=== userId);
+    this.users = this.users.filter(user => user.id !== userId);
   }
 }
 
-module.exports = UsersService;
+module.exports = UserService;

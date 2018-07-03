@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import styles from '.App.css';
+import styles from './App.css';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
-import UserList from './UserList';
+import UserList from './UsersList';
 import UserForm from './UserForm';
 
 const socket = io('/');
@@ -55,6 +55,7 @@ class App extends Component {
           <div className={styles.AppRoom}>
             App room
           </div>
+        </div>
         <div className={styles.Body}>
           <UserList 
             users={this.state.users}
@@ -70,11 +71,11 @@ class App extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
   
   renderUserForm() {
-    return (<UserForm onSubmit={name => this.handleUserSubmit(nam)} />)
+    return (<UserForm onSubmit={name => this.handleUserSubmit(name)} />)
   }
 };    
 

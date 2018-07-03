@@ -1,11 +1,11 @@
 const express = require('express');
 const http = require('http');
-const socetIo = require('socket.io');
+const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 const UserService = require('./UsersService');
-const UserService = new UserService();
+const userService = new UserService();
 
 app.use(express.static(__dirname + './public'));
 
@@ -39,6 +39,5 @@ io.on('connection', function(socket) {
 });
 
 server.listen(3000, function(){
-  console.log('Listening on *:3000');  
+  console.log('Listening on: 3000');  
 });
-
