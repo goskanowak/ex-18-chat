@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
+//const HotModuleReplacement = require('hot-module-replacement');
 
 const plugins = [new HtmlWebpackPlugin({
-  template: './index.html',
+  template: './client/index.html',
   filename: 'index.html',
   inject: 'body'
 })];
@@ -14,7 +15,9 @@ module.exports = (env) => {
       new OptimizeJsPlugin({
         sourceMap: false
       })
-    )
+    );
+//  } else {
+//      plugins.push(new webpack.HotModuleReplacementPlugin())
   }
     
   return {

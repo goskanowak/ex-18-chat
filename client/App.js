@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import styles from './App.css';
+import { hot } from 'react-hot-loader';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 import UserList from './UsersList';
@@ -71,12 +72,12 @@ class App extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
   
   renderUserForm() {
-    return (<UserForm onSubmit={name => this.handleUserSubmit(name)} />)
+    return (<UserForm onSubmit={name => this.handleUserSubmit(name)} /> )
   }
 };    
 
-export default App;
+export default hot(module)(App);

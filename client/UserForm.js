@@ -28,6 +28,6 @@ class UserForm extends Component {
       </form>
     );
   }
-}
+};
 
 export default UserForm;
