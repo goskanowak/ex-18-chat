@@ -43,7 +43,7 @@ class App extends Component {
   render() {
     return this.state.name !== '' ? (
     this.renderLayout()
-    ) : this.renderUserFrom();
+    ) : this.renderUserForm();
   }
     
   renderLayout() {
@@ -56,19 +56,19 @@ class App extends Component {
           <div className={styles.AppRoom}>
             App room
           </div>
-        </div>
-        <div className={styles.Body}>
-          <UserList 
-            users={this.state.users}
-          />
-          <div className={styles.MessageWrapper}>
-            <MessageList 
-              messages={this.state.messages}
-            />
-            <MessageFrom
-              onMessageSubmit={message => this.handleMessageSubmit(message)}
-              name={this.state.name}
-            />
+          </div>
+          <div className={styles.Body}>
+            <UserList 
+             users={this.state.users}
+           />
+           <div className={styles.MessageWrapper}>
+             <MessageList 
+               messages={this.state.messages}
+           />
+           <MessageFrom
+             onMessageSubmit={message => this.handleMessageSubmit(message)}
+             name={this.state.name}
+           />
           </div>
         </div>
       </div>
