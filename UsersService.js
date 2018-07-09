@@ -8,7 +8,8 @@ class UserService {
   }
     
   getUserById(userId) {
-    return this.users.find(user => user.id === userId);
+    return this.users.find(user => 
+      user.id === userId);
   }
     
   addUser(user) {
@@ -16,7 +17,8 @@ class UserService {
   }
     
   removeUser(userId) {
-    this.users = this.users.filter(user => user.id !== userId);
+    this.users = this.users.filter(user => 
+      user.id !== userId);
   }
 }
 

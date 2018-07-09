@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from './MessageList.css';
 
 const Message = props => (
@@ -10,7 +10,7 @@ const Message = props => (
 
 const MessageList = props => (
   <div className={styles.MessageList}>
-    {
+    { 
       props.messages.map((message, i) => {
         return (
           <Message

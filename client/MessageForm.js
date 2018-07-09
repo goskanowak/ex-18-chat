@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import React from 'react';
 import styles from './MessageForm.css';
 
 class MessageForm extends Component {
@@ -24,7 +23,9 @@ class MessageForm extends Component {
 
   render() {
     return(
-      <form className={styles.MessageForm} onSubmit={e => this.handleSubmit(e)}>
+      <form 
+        className={styles.MessageForm} 
+        onSubmit={e => this.handleSubmit(e)}>
         <input
           className={styles.MessageInput}
           onChange={e => this.changeHandler(e)}

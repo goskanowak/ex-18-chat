@@ -12,12 +12,18 @@ const socket = io('/');
 class App extends Component {
   constructor(props) {
     super(props);
-      this.state = {users: [], message: [], text: '', name: ''};
+      this.state = 
+        {users: [], 
+         messages: [], 
+         text: '', 
+         name: ''};
   }
     
   componentDidMount() {
-    socket.on('message', message => this.messageReceive(message));
-    socket.on('update', ({users}) => this.chatUpdate(users));
+    socket.on('message', message => 
+      this.messageReceive(message));
+    socket.on('update', ({users}) => 
+      this.chatUpdate(users));
   }
     
   messageReceive(message) {
@@ -65,8 +71,9 @@ class App extends Component {
              <MessageList 
                messages={this.state.messages}
            />
-           <MessageFrom
-             onMessageSubmit={message => this.handleMessageSubmit(message)}
+           <MessageForm
+             onMessageSubmit={message => 
+               this.handleMessageSubmit(message)}
              name={this.state.name}
            />
           </div>
@@ -76,7 +83,9 @@ class App extends Component {
   }
   
   renderUserForm() {
-    return (<UserForm onSubmit={name => this.handleUserSubmit(name)} /> )
+    return (
+      <UserForm onUserSubmit={name => 
+        this.handleUserSubmit(name)} />)
   }
 };    
 
